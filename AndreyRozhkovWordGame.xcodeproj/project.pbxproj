@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BA6337082838E0D20023CE84 /* WordPairsClientEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6337072838E0D20023CE84 /* WordPairsClientEnvironment.swift */; };
 		BA7338102838D27A00E1518F /* AndreyRozhkovWordGameApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA73380F2838D27A00E1518F /* AndreyRozhkovWordGameApp.swift */; };
 		BA7338122838D27A00E1518F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7338112838D27A00E1518F /* ContentView.swift */; };
 		BA7338142838D28500E1518F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA7338132838D28500E1518F /* Assets.xcassets */; };
@@ -14,6 +15,10 @@
 		BA7338212838D28600E1518F /* AndreyRozhkovWordGameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7338202838D28600E1518F /* AndreyRozhkovWordGameTests.swift */; };
 		BA73382B2838D28600E1518F /* AndreyRozhkovWordGameUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA73382A2838D28600E1518F /* AndreyRozhkovWordGameUITests.swift */; };
 		BA73382D2838D28600E1518F /* AndreyRozhkovWordGameUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA73382C2838D28600E1518F /* AndreyRozhkovWordGameUITestsLaunchTests.swift */; };
+		BA73383B2838D4A900E1518F /* WordPairsClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA73383A2838D4A900E1518F /* WordPairsClient.swift */; };
+		BA73383E2838D4EB00E1518F /* WordPair.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA73383D2838D4EB00E1518F /* WordPair.swift */; };
+		BA7338412838D57100E1518F /* words.json in Resources */ = {isa = PBXBuildFile; fileRef = BA7338402838D57100E1518F /* words.json */; };
+		BA7338432838DBBE00E1518F /* WordPairsClientBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7338422838DBBD00E1518F /* WordPairsClientBuilder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BA6337072838E0D20023CE84 /* WordPairsClientEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordPairsClientEnvironment.swift; sourceTree = "<group>"; };
 		BA73380C2838D27A00E1518F /* AndreyRozhkovWordGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AndreyRozhkovWordGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA73380F2838D27A00E1518F /* AndreyRozhkovWordGameApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AndreyRozhkovWordGameApp.swift; sourceTree = "<group>"; };
 		BA7338112838D27A00E1518F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -44,6 +50,10 @@
 		BA7338262838D28600E1518F /* AndreyRozhkovWordGameUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AndreyRozhkovWordGameUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA73382A2838D28600E1518F /* AndreyRozhkovWordGameUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AndreyRozhkovWordGameUITests.swift; sourceTree = "<group>"; };
 		BA73382C2838D28600E1518F /* AndreyRozhkovWordGameUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AndreyRozhkovWordGameUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		BA73383A2838D4A900E1518F /* WordPairsClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordPairsClient.swift; sourceTree = "<group>"; };
+		BA73383D2838D4EB00E1518F /* WordPair.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordPair.swift; sourceTree = "<group>"; };
+		BA7338402838D57100E1518F /* words.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = words.json; sourceTree = "<group>"; };
+		BA7338422838DBBD00E1518F /* WordPairsClientBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordPairsClientBuilder.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +108,9 @@
 				BA7338112838D27A00E1518F /* ContentView.swift */,
 				BA7338132838D28500E1518F /* Assets.xcassets */,
 				BA7338152838D28500E1518F /* Preview Content */,
+				BA73383F2838D55400E1518F /* Resourses */,
+				BA73383C2838D4E200E1518F /* Models */,
+				BA7338392838D48400E1518F /* Clients */,
 			);
 			path = AndreyRozhkovWordGame;
 			sourceTree = "<group>";
@@ -126,6 +139,33 @@
 			);
 			path = AndreyRozhkovWordGameUITests;
 			sourceTree = "<group>";
+		};
+		BA7338392838D48400E1518F /* Clients */ = {
+			isa = PBXGroup;
+			children = (
+				BA73383A2838D4A900E1518F /* WordPairsClient.swift */,
+				BA7338422838DBBD00E1518F /* WordPairsClientBuilder.swift */,
+				BA6337072838E0D20023CE84 /* WordPairsClientEnvironment.swift */,
+			);
+			path = Clients;
+			sourceTree = "<group>";
+		};
+		BA73383C2838D4E200E1518F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				BA73383D2838D4EB00E1518F /* WordPair.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		BA73383F2838D55400E1518F /* Resourses */ = {
+			isa = PBXGroup;
+			children = (
+				BA7338402838D57100E1518F /* words.json */,
+			);
+			name = Resourses;
+			path = AndreyRozhkovWordGame/Resourses;
+			sourceTree = SOURCE_ROOT;
 		};
 /* End PBXGroup section */
 
@@ -231,6 +271,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA7338412838D57100E1518F /* words.json in Resources */,
 				BA7338172838D28500E1518F /* Preview Assets.xcassets in Resources */,
 				BA7338142838D28500E1518F /* Assets.xcassets in Resources */,
 			);
@@ -257,7 +298,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA73383B2838D4A900E1518F /* WordPairsClient.swift in Sources */,
+				BA73383E2838D4EB00E1518F /* WordPair.swift in Sources */,
 				BA7338122838D27A00E1518F /* ContentView.swift in Sources */,
+				BA6337082838E0D20023CE84 /* WordPairsClientEnvironment.swift in Sources */,
+				BA7338432838DBBE00E1518F /* WordPairsClientBuilder.swift in Sources */,
 				BA7338102838D27A00E1518F /* AndreyRozhkovWordGameApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
