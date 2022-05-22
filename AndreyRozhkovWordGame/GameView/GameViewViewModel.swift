@@ -9,6 +9,9 @@ import Foundation
 import Combine
 
 class GameViewViewModel: ObservableObject {
+    
+    let maxWrongAttempts: UInt = 3
+    let maxPairsIndex: UInt = 14
 
     private let environment: GameViewViewModelEnvironment
     private var cancellables = Set<AnyCancellable>()
@@ -23,28 +26,36 @@ class GameViewViewModel: ObservableObject {
     @Published public var gamePair: GameWordPair = GameWordPair(pair: WordPair(textEng: "", textSpa: ""), isCorrect: true)
     @Published public var correctAttempts: UInt = 0
     @Published public var wrongAttempts: UInt = 0
+    @Published public var timerText: String = ""
+    @Published public var gameDidEnd: Bool = false
+    
+    private let timer = TimerClient()
     
     public func correctSelected() {
         handlePairSelected(asCorrect: true)
-        pushNextPair()
     }
     
     public func wrongSelected() {
         handlePairSelected(asCorrect: false)
-        pushNextPair()
     }
     
     
     init(environment: GameViewViewModelEnvironment) {
         self.environment = environment
         
-        listenForPairUpdates()
+        listenForPairEvents()
+        listenForTimerEvents()
     }
     
-    private func listenForPairUpdates() {
+    private func listenForPairEvents() {
         environment.gamePairs
-            .sink { sequence in
-            self.gamePairs = sequence
+            .sink { [weak self] sequence in
+                self?.gamePairs = sequence
+            }
+            .store(in: &cancellables)
+        
+        $gamePair.sink { [weak self] _ in
+            self?.timer.start()
         }
         .store(in: &cancellables)
     }
@@ -64,6 +75,40 @@ class GameViewViewModel: ObservableObject {
         } else {
             wrongAttempts += 1
         }
+        checkForGameEnd()
+        pushNextPair()
+    }
+    
+    private func handleRoundTimeOut() {
+        wrongAttempts += 1
+        checkForGameEnd()
+        pushNextPair()
+    }
+    
+    private func checkForGameEnd() {
+        if wrongAttempts >= maxWrongAttempts ||
+         currentPairsIndex >= maxPairsIndex {
+            gameDidEnd = true
+        }
+    }
+    
+    // MARK: Timer
+    
+    private func listenForTimerEvents() {
+        timer.start()
+        timer.timerText
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] text in
+                self?.timerText = text
+        }
+        .store(in: &cancellables)
+        
+        timer.roundTimeDidEnd
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] _ in
+                self?.handleRoundTimeOut()
+        }
+        .store(in: &cancellables)
     }
 }
 

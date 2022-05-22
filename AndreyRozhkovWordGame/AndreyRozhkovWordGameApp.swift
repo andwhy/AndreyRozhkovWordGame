@@ -9,17 +9,12 @@ import SwiftUI
 
 @main
 struct AndreyRozhkovWordGameApp: App {
+    
+    let router = ViewRouter()
+    
     var body: some Scene {
         WindowGroup {
-            let wordPairClient = WordPairsClient.live()
-            GameView(model:
-                        GameViewViewModel(environment:
-                                            GameViewViewModelEnvironment(
-                                                gamePairs: wordPairClient.pairSequence,
-                                                refreshPairs: wordPairClient.refreshSequence
-                                            )
-                                         )
-            )
+            router.buildView(route: .start)
         }
     }
 }
