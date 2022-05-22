@@ -26,17 +26,17 @@ class WordPairsClient: ObservableObject {
     }()
     
     private var correctWordPair: WordPair {
-        let randIndex = getRandomIndexIn(pairSequenseLentght)
+        let randIndex = getRandomIndexIn(wordPairs.count)
         return wordPairs[randIndex]
     }
     
     private var incorrectWordPair: WordPair {
-        let randIndex = getRandomIndexIn(pairSequenseLentght)
-        let randIndexOfIncorrectPair = getRandomIndexIn(pairSequenseLentght, excludeIndex: randIndex)
+        let randIndex = getRandomIndexIn(wordPairs.count)
+        let randIndexOfIncorrectPair = getRandomIndexIn(wordPairs.count, excludeIndex: randIndex)
 
         return WordPair(
-            textEng: wordPairs[randIndex].textSpa,
-            textSpa: wordPairs[randIndexOfIncorrectPair].textEng
+            textEng: wordPairs[randIndex].textEng,
+            textSpa: wordPairs[randIndexOfIncorrectPair].textSpa
         )
     }
     
