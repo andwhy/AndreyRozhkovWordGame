@@ -9,8 +9,7 @@ import Foundation
 
 extension WordPairsClient {
     static func live(
-        with enviroment: WordPairsClientEnvironment
-    ) -> Self {
-        WordPairsClient(environment: enviroment)
+    ) -> WordPairsClient {
+        WordPairsClient(environment: WordPairsClientEnvironment())
     }
 }

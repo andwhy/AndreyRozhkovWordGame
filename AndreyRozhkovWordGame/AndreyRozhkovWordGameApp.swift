@@ -11,7 +11,15 @@ import SwiftUI
 struct AndreyRozhkovWordGameApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            let wordPairClient = WordPairsClient.live()
+            GameView(model:
+                        GameViewViewModel(environment:
+                                            GameViewViewModelEnvironment(
+                                                gamePairs: wordPairClient.pairSequence,
+                                                refreshPairs: wordPairClient.refreshSequence
+                                            )
+                                         )
+            )
         }
     }
 }
