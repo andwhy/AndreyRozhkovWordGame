@@ -25,9 +25,13 @@ struct ViewRouter {
                 gamePairs: wordPairClient.pairSequence,
                 refreshPairs: wordPairClient.refreshSequence
             )
-            return AnyView(GameView(model: GameViewViewModel(environment: environment)).environmentObject(viewRouterEnvironment))
+            return AnyView(GameView(model: GameViewViewModel(environment: environment))
+                .environmentObject(viewRouterEnvironment))
         case .start:
-            return AnyView(StartView(model: StartViewModel(startGame: { buildView(route: .game) })).environmentObject(viewRouterEnvironment))
+            return AnyView(StartView(model: StartViewModel(startGame: { buildView(route: .game) }))
+                .environmentObject(viewRouterEnvironment))
         }
     }
 }
+
+

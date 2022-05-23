@@ -8,6 +8,8 @@
 import SwiftUI
 import Combine
 
+// TODO: Separate this view to smaller reusable views like AttemptsView
+
 struct GameView: View {
         
     @EnvironmentObject var router: ViewRouterEnvironment
@@ -18,26 +20,10 @@ struct GameView: View {
     var body: some View {
         NavigationView {
             VStack {
-                Group {
-                    HStack {
-                        Spacer()
-                        VStack(alignment: .center, spacing: 10) {
-                            Text("Correct attemps: \(model.correctAttempts)")
-                                .font(.title3)
-                                .padding()
-                                .foregroundColor(.white)
-                                .background(.green)
-                                .clipShape(Capsule())
-                            Text("Wrong attemps: \(model.wrongAttempts)")
-                                .font(.title3)
-                                .padding()
-                                .foregroundColor(.white)
-                                .background(.red)
-                                .clipShape(Capsule())
-                        }
-                        .padding()
-                    }
-                }
+                AttemptsView(viewState: AttemptsViewState(
+                    correctAttempts: model.correctAttempts,
+                    wrongAttempts: model.wrongAttempts
+                ))
                 Spacer()
                 Group {
                     VStack {

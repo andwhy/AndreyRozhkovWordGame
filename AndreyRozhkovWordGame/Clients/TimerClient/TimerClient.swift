@@ -10,18 +10,15 @@ import Combine
 
 class TimerClient: ObservableObject {
     
+    // MARK: Constants
+    
     private let timerTexts = ["00:05", "00:04", "00:03", "00:02", "00:01", "00:00"]
     private let maxTimerCounts = 6
     
+    // MARK: Properties
+    
     private lazy var timerTextSubject = CurrentValueSubject<String, Never>(timerTexts.first!)
     private var roundTimeDidEndSubject = PassthroughSubject<Void, Never>()
-    
-    public var timerText: AnyPublisher<String, Never> {
-        timerTextSubject.eraseToAnyPublisher()
-    }
-    public var roundTimeDidEnd: AnyPublisher<Void, Never> {
-        roundTimeDidEndSubject.eraseToAnyPublisher()
-    }
     
     private var timer: Timer? {
         didSet {
@@ -32,6 +29,13 @@ class TimerClient: ObservableObject {
     private var runCount = 0
     
     // MARK: Interface
+    
+    public var timerText: AnyPublisher<String, Never> {
+        timerTextSubject.eraseToAnyPublisher()
+    }
+    public var roundTimeDidEnd: AnyPublisher<Void, Never> {
+        roundTimeDidEndSubject.eraseToAnyPublisher()
+    }
     
     public func start() {
         stop()
@@ -49,6 +53,8 @@ class TimerClient: ObservableObject {
         timer?.invalidate()
         timer = nil
     }
+    
+    // MARK: Lifecycle
     
     @objc
     private func timerFired() {

@@ -10,9 +10,20 @@ import Combine
 
 class GameViewViewModel: ObservableObject {
     
+    // MARK: Constants
+    
     let maxWrongAttempts: UInt = 3
     let maxPairsIndex: UInt = 14
 
+    // MARK: Properties
+    
+    @Published public var gamePair: GameWordPair = GameWordPair(pair: WordPair(textEng: "", textSpa: ""), isCorrect: true)
+    @Published public var correctAttempts: UInt = 0
+    @Published public var wrongAttempts: UInt = 0
+    @Published public var timerText: String = ""
+    @Published public var gameDidEnd: Bool = false
+    
+    private let timer = TimerClient()
     private let environment: GameViewViewModelEnvironment
     private var cancellables = Set<AnyCancellable>()
     private var gamePairs: [GameWordPair] = [] {
@@ -23,13 +34,7 @@ class GameViewViewModel: ObservableObject {
     }
     private var currentPairsIndex = 0
     
-    @Published public var gamePair: GameWordPair = GameWordPair(pair: WordPair(textEng: "", textSpa: ""), isCorrect: true)
-    @Published public var correctAttempts: UInt = 0
-    @Published public var wrongAttempts: UInt = 0
-    @Published public var timerText: String = ""
-    @Published public var gameDidEnd: Bool = false
-    
-    private let timer = TimerClient()
+    // MARK: Interface
     
     public func correctSelected() {
         handlePairSelected(asCorrect: true)
@@ -39,6 +44,7 @@ class GameViewViewModel: ObservableObject {
         handlePairSelected(asCorrect: false)
     }
     
+    // MARK: Lifecycle
     
     init(environment: GameViewViewModelEnvironment) {
         self.environment = environment
@@ -46,6 +52,8 @@ class GameViewViewModel: ObservableObject {
         listenForPairEvents()
         listenForTimerEvents()
     }
+    
+    // MARK: Game Cycle
     
     private func listenForPairEvents() {
         environment.gamePairs
@@ -79,12 +87,6 @@ class GameViewViewModel: ObservableObject {
         pushNextPair()
     }
     
-    private func handleRoundTimeOut() {
-        wrongAttempts += 1
-        checkForGameEnd()
-        pushNextPair()
-    }
-    
     private func checkForGameEnd() {
         if wrongAttempts >= maxWrongAttempts ||
          currentPairsIndex >= maxPairsIndex {
@@ -110,9 +112,10 @@ class GameViewViewModel: ObservableObject {
         }
         .store(in: &cancellables)
     }
-}
-
-struct GameViewViewModelEnvironment {
-    var gamePairs: AnyPublisher<[GameWordPair], Never>
-    var refreshPairs: () -> Void
+    
+    private func handleRoundTimeOut() {
+        wrongAttempts += 1
+        checkForGameEnd()
+        pushNextPair()
+    }
 }
