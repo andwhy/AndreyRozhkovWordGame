@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+@main
 struct AndreyRozhkovWordGameApp: App {
     
     let router = ViewRouter()
@@ -15,24 +16,5 @@ struct AndreyRozhkovWordGameApp: App {
         WindowGroup {
             router.buildView(route: .start)
         }
-    }
-}
-
-@main
-struct AppLauncher {
-
-    static func main() throws {
-        if NSClassFromString("XCTestCase") == nil {
-            AndreyRozhkovWordGameApp.main()
-        } else {
-            TestApp.main()
-        }
-    }
-}
-
-struct TestApp: App {
-    
-    var body: some Scene {
-        WindowGroup { Text("Running Unit Tests") }
     }
 }
