@@ -61,7 +61,7 @@ class WordPairsClient: ObservableObject {
     //MARK: Game Word Pairs Generating
     
     func getGamePairSequence(lenght: Int) -> [GameWordPair] {
-        let numberOfCorrectPairs = Int(Double(lenght) * correctPairsRate)
+        let numberOfCorrectPairs = Int(round((Double(lenght) * correctPairsRate)))
         let numberOfIncorrectPairs = lenght - Int(numberOfCorrectPairs)
         
         let correctPairs = (0..<numberOfCorrectPairs)

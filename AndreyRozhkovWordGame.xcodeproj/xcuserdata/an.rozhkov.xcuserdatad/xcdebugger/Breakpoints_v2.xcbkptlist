@@ -96,8 +96,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "54"
             endingLineNumber = "54"
-            landmarkName = "GameViewViewModel"
-            landmarkType = "3">
+            landmarkName = "init(environment:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -193,6 +193,86 @@
             startingLineNumber = "87"
             endingLineNumber = "87"
             landmarkName = "handlePairSelected(asCorrect:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6C97C10B-7460-4939-8824-FE7E63B00BEF"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AndreyRozhkovWordGame/AndreyRozhkovWordGameApp.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "26"
+            endingLineNumber = "26"
+            landmarkName = "main()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C096102B-BAD6-4243-876F-5C91D06B81E7"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AndreyRozhkovWordGame/Clients/WordPairsClient/WordPairsClient.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "65"
+            endingLineNumber = "65"
+            landmarkName = "getGamePairSequence(lenght:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "C096102B-BAD6-4243-876F-5C91D06B81E7 - 356ba33f4ead525"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "AndreyRozhkovWordGame.WordPairsClient.getGamePairSequence(lenght: Swift.Int) -&gt; Swift.Array&lt;AndreyRozhkovWordGame.GameWordPair&gt;"
+                  moduleName = "AndreyRozhkovWordGame"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/an.rozhkov/Code/Babbel%20Assigment/AndreyRozhkovWordGame/AndreyRozhkovWordGame/Clients/WordPairsClient/WordPairsClient.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "65"
+                  endingLineNumber = "65"
+                  offsetFromSymbolStart = "529">
+               </Location>
+               <Location
+                  uuid = "C096102B-BAD6-4243-876F-5C91D06B81E7 - d089fee356e03910"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "AndreyRozhkovWordGameTests.WordPairsClient.getGamePairSequence(lenght: Swift.Int) -&gt; Swift.Array&lt;AndreyRozhkovWordGameTests.GameWordPair&gt;"
+                  moduleName = "AndreyRozhkovWordGameTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/an.rozhkov/Code/Babbel%20Assigment/AndreyRozhkovWordGame/AndreyRozhkovWordGame/Clients/WordPairsClient/WordPairsClient.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "65"
+                  endingLineNumber = "65"
+                  offsetFromSymbolStart = "529">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2DD265FC-2989-4EA1-BE29-1EEB497DCA72"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AndreyRozhkovWordGame/Clients/WordPairsClient/WordPairsClient.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "67"
+            endingLineNumber = "67"
+            landmarkName = "getGamePairSequence(lenght:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

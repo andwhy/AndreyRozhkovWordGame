@@ -20,6 +20,11 @@
 		BA633723283AE27B0023CE84 /* ViewRouterEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA633722283AE27B0023CE84 /* ViewRouterEnvironment.swift */; };
 		BA633728283B795F0023CE84 /* AttemptsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA633727283B795F0023CE84 /* AttemptsView.swift */; };
 		BA63372A283B7C130023CE84 /* GameViewViewModelEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA633729283B7C130023CE84 /* GameViewViewModelEnvironment.swift */; };
+		BA633730283B82DB0023CE84 /* WordPairsClientEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA63370F283A8AF80023CE84 /* WordPairsClientEnvironment.swift */; };
+		BA633731283B82DB0023CE84 /* WordPairsClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA633710283A8AF80023CE84 /* WordPairsClient.swift */; };
+		BA633732283B82DB0023CE84 /* WordPairsClientBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA633711283A8AF80023CE84 /* WordPairsClientBuilder.swift */; };
+		BA633733283B82DE0023CE84 /* GameWordPair.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA63370C283A59990023CE84 /* GameWordPair.swift */; };
+		BA633734283B82DE0023CE84 /* WordPair.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA73383D2838D4EB00E1518F /* WordPair.swift */; };
 		BA7338102838D27A00E1518F /* AndreyRozhkovWordGameApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA73380F2838D27A00E1518F /* AndreyRozhkovWordGameApp.swift */; };
 		BA7338122838D27A00E1518F /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7338112838D27A00E1518F /* GameView.swift */; };
 		BA7338142838D28500E1518F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA7338132838D28500E1518F /* Assets.xcassets */; };
@@ -399,7 +404,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA633732283B82DB0023CE84 /* WordPairsClientBuilder.swift in Sources */,
+				BA633734283B82DE0023CE84 /* WordPair.swift in Sources */,
+				BA633731283B82DB0023CE84 /* WordPairsClient.swift in Sources */,
+				BA633730283B82DB0023CE84 /* WordPairsClientEnvironment.swift in Sources */,
 				BA7338212838D28600E1518F /* AndreyRozhkovWordGameTests.swift in Sources */,
+				BA633733283B82DE0023CE84 /* GameWordPair.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
